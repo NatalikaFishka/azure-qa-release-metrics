@@ -1,1 +1,1 @@
-# azure-qa-release-metrics
+# Charts with release QA metrics

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Release QA Metrics</title>
+		<meta name="description" content="chart created using amCharts live editor" />
+		
+		<!-- amCharts javascript sources -->
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/serial.js"></script>
+
+		<!-- Additional styles -->
+		<style>
+			#chartdiv {
+				width: 60% !important;
+				margin: 0 auto;
+				box-shadow: 0 5px 15px rgb(0 0 0 / 50%);
+			}
+			
+		</style>
+
+		<!-- amCharts javascript code -->
+		<script type="text/javascript">
+			AmCharts.makeChart("chartdiv",
+				{
+					"type": "serial",
+					"categoryField": "category",
+					"startDuration": 1,
+					"categoryAxis": {
+						"gridPosition": "start"
+					},
+					"trendLines": [],
+					"graphs": [
+						{
+							"fillAlphas": 1,
+							"fillColors": "#06C006",
+							"id": "AmGraph-1",
+							"lineColor": "#06C006",
+							"tabIndex": -14,
+							"title": "Current Quality Ratio",
+							"type": "column",
+							"valueField": "Current Quality Ratio"
+						},
+						{
+							"balloonText": "[[title]] of [[category]]:[[value]]",
+							"fillAlphas": 1,
+							"id": "AmGraph-3",
+							"title": "Defect Containment",
+							"type": "column",
+							"valueField": "Defect Containment"
+						},
+						{
+							"balloonColor": "undefined",
+							"balloonText": "[[title]] of [[category]]:[[value]]",
+							"fillAlphas": 1,
+							"fillColors": "#FF0000",
+							"id": "AmGraph-2",
+							"lineColor": "#FF0000",
+							"title": "Decline Rate",
+							"type": "column",
+							"valueField": "Decline Rate"
+						}
+					],
+					"guides": [],
+					"valueAxes": [
+						{
+							"id": "ValueAxis-1",
+							"title": "Ration, %"
+						}
+					],
+					"allLabels": [],
+					"balloon": {},
+					"legend": {
+						"enabled": true,
+						"useGraphSettings": true
+					},
+					"titles": [
+						{
+							"id": "Title-1",
+							"size": 15,
+							"text": "Release Testing Metrics"
+						}
+					],
+					"dataProvider": [
+						{
+							"category": "20.04",
+							"Defect Containment": "90",
+							"Current Quality Ratio": "97",
+							"Decline Rate": 7
+						},
+						{
+							"category": "20.06",
+							"Defect Containment": "94",
+							"Current Quality Ratio": "96",
+							"Decline Rate": "10"
+						},
+						{
+							"category": "20.10",
+							"Defect Containment": "88",
+							"Current Quality Ratio": "98",
+							"Decline Rate": "9"
+						},
+						{
+							"category": "21.02",
+							"Defect Containment": "100",
+							"Current Quality Ratio": "94",
+							"Decline Rate": "8"
+						}
+					]
+				}
+			);
+		</script>
+	</head>
+	<body>
+		<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+	</body>
+</html>
